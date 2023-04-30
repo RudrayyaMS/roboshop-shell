@@ -14,6 +14,10 @@ print_head "Install mysql server"
 yum install mysql-community-server -y &>>${log_file}
 status_check $?
 
+print_head "Copy mysql repo file"
+cp ${code_dir}/configs/mysql.repo /etc/yum.repos.d/mysql.repo &>>${log_file}
+status_check $?
+
 print_head "Enable mysql"
 systemctl enable mysqld &>>${log_file}
 status_check $>
