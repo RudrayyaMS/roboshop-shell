@@ -20,7 +20,7 @@ status_check $?
 
 print_head "Enable mysql"
 systemctl enable mysqld &>>${log_file}
-status_check $>
+status_check $?
 
 print_head "Start mysql"
 systemctl start mysqld &>>${log_file}
