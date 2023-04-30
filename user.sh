@@ -31,7 +31,7 @@ cd /app
 status_check $?
 
 print_head "Extracting App Content"
-unzip /tmp/catalogue.zip &>>${log_file}
+unzip /tmp/user.zip &>>${log_file}
 status_check $?
 
 print_head "Installing Nodejs Dependencies"
