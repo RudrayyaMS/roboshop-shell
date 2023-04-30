@@ -26,7 +26,7 @@ rm -rf /app/* &>>${log_file}
 status_check $?
 
 print_head "Downloading App Content"
-curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>${log_file}
+curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user.zip &>>${log_file}
 cd /app
 status_check $?
 
