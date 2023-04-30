@@ -7,8 +7,9 @@ print_head() {
 }
 status_check() {
 if [ $1 -eq 0 ]; then
-  echo success
+  echo SUCCESS
 else
-  echo failure
+  echo FAILURE
+  exit 1
 fi
 }
