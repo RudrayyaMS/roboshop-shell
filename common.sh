@@ -100,8 +100,10 @@ nodejs() {
   cp ${code_dir}/configs/${component}.service /etc/systemd/system/${component}.service &>>${log_file}
   status_check $?
 
+  # Schema Setup Function
   schema_setup
 
+  # Systemd Function
   systemd_setup
 }
 
