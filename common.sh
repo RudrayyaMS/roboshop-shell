@@ -122,4 +122,4 @@ java () {
 
   # Systemd Function
   systemd_setup
-}}
+}
