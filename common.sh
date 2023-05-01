@@ -53,7 +53,7 @@ schema_setup() {
   fi
 }
 
-app_prereq_setpup () {
+app_prereq_setup () {
   print_head "Create Roboshop User"
     id roboshop &>>${log_file}
     if [ $? -ne 0 ]; then
