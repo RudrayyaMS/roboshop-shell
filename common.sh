@@ -16,6 +16,10 @@ fi
 }
 
 systemd_setup () {
+    print_head "Copy Systmed Service File"
+    cp ${code_dir}/configs/${component}.service /etc/systemd/system/${component}.service &>>${log_file}
+    status_check $?
+
     print_head "Reload Systemd"
     systemctl daemon-reload &>>${log_file}
     status_check $?
@@ -48,7 +52,7 @@ schema_setup() {
     status_check $?
 
     print_head "Load Schema"
-    mysql -h mysql.devopsm71.online -uroot -p${mysql_root_password} < /app/schema/${component}.sql &>>${log_file}
+    mysql -h mysql.devopsm71.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>${log_file}
     status_check $?
   fi
 }
@@ -94,10 +98,6 @@ nodejs() {
 
   print_head "Installing Nodejs Dependencies"
   npm install &>>${log_file}
-  status_check $?
-
-  print_head "Copy Systmed Service File"
-  cp ${code_dir}/configs/${component}.service /etc/systemd/system/${component}.service &>>${log_file}
   status_check $?
 
   # Schema Setup Function
