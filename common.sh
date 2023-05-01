@@ -114,7 +114,7 @@ java () {
 
   print_head "Install Dependencies and package"
   mvn clean package &>>${log_file}
-  mv target/shipping-1.0.jar shipping.jar &>>${log_file}
+  mv target/${component}-1.0.jar ${component}.jar &>>${log_file}
   status_check $?
 
   # Schema Setup Function
